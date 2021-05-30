@@ -30,6 +30,31 @@ public class Deportista {
 	public String toString() {
 		return "Deportista [numeroDeSocio=" + numeroDeSocio + ", nombre=" + nombre + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((numeroDeSocio == null) ? 0 : numeroDeSocio.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+		Deportista other = (Deportista) obj;
+		if (numeroDeSocio == null) {
+			if (other.numeroDeSocio != null)
+				return false;
+		} else if (!numeroDeSocio.equals(other.numeroDeSocio))
+			return false;
+		return true;
+	}
 	
 	
 }
